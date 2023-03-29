@@ -11,12 +11,12 @@ void setup()
 void loop()
 {
   // Lê o valor do Potenciometro
-  int angle = analogRead(0); 
+  int angleBase = analogRead(0); 
   // Mapeia o valor de 0 a 180 graus
-  angle=map(angle, 0, 1023, 0, 180);
-  Serial.println(angle);
+  angleBase=map(angleBase, 0, 1023, 0, 180);
+  Serial.println(angleBase);
   // Repassa o angulo ao ServoWrite
-  servoBase.write(angle); 
+  servoBase.write(angleBase); 
   // Delay de 15ms para o Servo alcançar a posição
   delay(15);
 }
