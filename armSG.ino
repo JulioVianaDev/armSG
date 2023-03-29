@@ -17,18 +17,18 @@ void setup()
 {
   // Anexa o Servo ao Pin5
   servoBase.attach(5); 
-  //servoEsquerda.attach(6); 
+  servoEsquerda.attach(6); 
   //servoDireita.attach(9); 
-  //servoGarra.attach(10); 
+  servoGarra.attach(10); 
   Serial.begin(9600);
 }
  
 void loop()
 {
   analogBase.update();
-  //analogEsquerda.update();
+  analogEsquerda.update();
   //analogDireita.update();
-  //analogGarra.update();
+  analogGarra.update();
   // Lê o valor do Potenciometro
   int angleBase = analogRead(0); 
   //int angleBaseConvertido=map(angleBase, 0, 1023, 0, 180);
