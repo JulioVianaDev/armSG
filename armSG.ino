@@ -20,9 +20,9 @@ void loop()
   int anguloFiltrado = analog.getValue();
   int angleBaseFiltradoConvertido=map(angleBase, 0, 1023, 0, 180);
   
-  Serial.print(anguloFiltrado);
+  Serial.print(angleBase);
   Serial.print("\t");
-  Serial.println(angleBase);
+  Serial.println(anguloFiltrado);
   servoBase.write(angleBaseFiltradoConvertido); 
   delay(100);
 }
