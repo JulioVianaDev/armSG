@@ -30,7 +30,7 @@ void loop()
   //analogDireita.update();
   //analogGarra.update();
   // Lê o valor do Potenciometro
-  //int angleBase = analogRead(0); 
+  int angleBase = analogRead(0); 
   //int angleBaseConvertido=map(angleBase, 0, 1023, 0, 180);
   
   //Angulos Servo Base
@@ -50,9 +50,9 @@ void loop()
   //int angleGarraFiltradoConvertido=map(anguloFiltradoGarra, 0, 1023, 0, 180);
   
   // PLOTTER SERIAL PARA VER OS RUIDOS
-  //Serial.print(angleBase);
-  //Serial.print("\t");
-  //Serial.println(anguloFiltradoBase);
+  Serial.print(angleBase);
+  Serial.print("\t");
+  Serial.println(anguloFiltradoBase);
   
   servoBase.write(angleBaseFiltradoConvertido); 
   //servoEsquerda.write(angleEsquerdaFiltradoConvertido);
