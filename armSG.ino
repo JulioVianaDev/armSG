@@ -1,8 +1,8 @@
 #include <Servo.h>
 Servo servoBase; 
 #include <ResponsiveAnalogRead.h>
-const int ANALOG_PIN = A0;
-ResponsiveAnalogRead analog(ANALOG_PIN, true);
+const int ANALOG_PIN_BASE = A0;
+ResponsiveAnalogRead analogbase(ANALOG_PIN_BASE, true);
 // define the pin you want to use
 void setup()
 {
@@ -13,16 +13,16 @@ void setup()
  
 void loop()
 {
-  analog.update();
+  analogbase.update();
   // Lê o valor do Potenciometro
-  int angleBase = analogRead(0); 
-  int angleBaseConvertido=map(angleBase, 0, 1023, 0, 180);
-  int anguloFiltrado = analog.getValue();
-  int angleBaseFiltradoConvertido=map(angleBase, 0, 1023, 0, 180);
+  //int angleBase = analogRead(0); 
+  //int angleBaseConvertido=map(angleBase, 0, 1023, 0, 180);
+  int anguloFiltrado = analogbase.getValue();
+  int angleBaseFiltradoConvertido=map(anguloFiltrado, 0, 1023, 0, 180);
   
-  Serial.print(angleBase);
-  Serial.print("\t");
-  Serial.println(anguloFiltrado);
+//  Serial.print(angleBase);
+ // Serial.print("\t");
+  //Serial.println(anguloFiltrado);
   servoBase.write(angleBaseFiltradoConvertido); 
-  delay(100);
+  delay(60);
 }
