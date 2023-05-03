@@ -48,11 +48,11 @@ void loop()
   // Angulos Servo Garra
   int anguloFiltradoGarra = analogGarra.getValue();
   int angleGarraFiltradoConvertido=map(anguloFiltradoGarra, 0, 1023, 0, 180);
-  Serial.println(angleGarraFiltradoConvertido);
+  //Serial.println(angleGarraFiltradoConvertido);
   // PLOTTER SERIAL PARA VER OS RUIDOS
-  //Serial.print(angleBase);
-  //Serial.print("\t");
-  //Serial.println(anguloFiltradoGarra);
+  Serial.print(angleBase);
+  Serial.print("\t");
+  Serial.println(anguloFiltradoGarra);
   
   servoBase.write(angleBaseFiltradoConvertido); 
   servoEsquerda.write(angleEsquerdaFiltradoConvertido);
